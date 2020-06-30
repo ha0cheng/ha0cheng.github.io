@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>灰飞鱼的博客</title>
+    <link>https://ha0cheng.github.io/</link>
+    <description>Recent content on 灰飞鱼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://ha0cheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://ha0cheng.github.io/about/</link>
+      <pubDate>Tue, 30 Jun 2020 22:38:24 +0800</pubDate>
+      
+      <guid>https://ha0cheng.github.io/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
