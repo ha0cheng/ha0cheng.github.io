@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>灰飞鱼的博客</title>
-    <link>https://ha0cheng.github.io/</link>
-    <description>Recent content on 灰飞鱼的博客</description>
+    <title>Blogs on 灰飞鱼的博客</title>
+    <link>https://ha0cheng.github.io/blog/</link>
+    <description>Recent content in Blogs on 灰飞鱼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Tue, 30 Jun 2020 22:38:24 +0800</lastBuildDate>
     
-	<atom:link href="https://ha0cheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ha0cheng.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://ha0cheng.github.io/blog/about1/</guid>
       <description>测试用</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://ha0cheng.github.io/post/about/</link>
-      <pubDate>Tue, 30 Jun 2020 22:38:24 +0800</pubDate>
-      
-      <guid>https://ha0cheng.github.io/post/about/</guid>
-      <description>asdkhasdahsdaskhldasdhlaksdhklashdasdbkjasbcjx,nckjhaskjdhkas</description>
     </item>
     
   </channel>
