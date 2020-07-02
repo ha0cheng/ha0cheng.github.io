@@ -283,7 +283,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>30 Jun 2020, 22:38</time>
+    <time>30 Jun 2020, 00:00</time>
   </div>
 
   
@@ -294,8 +294,7 @@
 
 </div>
 
-  <p>![image-20200702234335233](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200702234335233.png)</p>
-<p>题目1</p>
+  <p>题目1</p>
 <p>可以根据溯源法
 $$
 input;;F\times F\times C \<br>
@@ -341,7 +340,6 @@ $$
 \frac{1}{M}+\frac{1}{K^2}
 $$</p>
 <p>题目二</p>
-<p>![image-20200703000919256](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200703000919256.png)</p>
 <p>在参考https://github.com/Z0m6ie/CIFAR-10_PyTorch 的基础上, 理解代码后进行了实验，</p>
 <p>首先使用pytorch，将Mobilenet的28层结构设置如下</p>
 <pre><code>           self.features = nn.Sequential(
@@ -405,14 +403,11 @@ $$</p>
 ​                nn.AvgPool2d(4),
 
 ​            )
-</code></pre><p>然后在CIFAR10的数据集上进行了50个epoch，最后结果如下</p>
-<p>![image-20200703001454619](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200703001454619.png)</p>
-<p>在测试集实现了85%的正确率，总体来说还是效果很好的。</p>
+</code></pre><p>然后在CIFAR10的数据集上进行了50个epoch，最后在测试集实现了85%的正确率，总体来说还是效果很好的。</p>
 <p>总结，mobilenet的主要思想在于：</p>
 <p>1.使用深度可分离卷积替代标准卷积，实现了轻量化网络，在算力消耗和参数量减少一个数量级的条件下仍然可以达到和当时先进方法差不多的性能</p>
 <p>2.使用宽度超参数和分辨率超参数来对更加轻量级的应用提供选择，这一块还未在代码中实现，之后会补充。</p>
-<p>mobilenet之后更新了v2,v3版本，也有很多的创新点，总结如下图，之后会再学习。</p>
-<p>![image-20200703001915014](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200703001915014.png)</p>
+<p>mobilenet之后更新了v2,v3版本，也有很多的创新点，之后会再学习。</p>
 
   
   <h4><i class="fa-share-alt" aria-hidden="true"></i>&nbsp;Share!</h4>

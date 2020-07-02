@@ -6,7 +6,7 @@
     <description>Recent content in Posts on 灰飞鱼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 30 Jun 2020 22:38:24 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ha0cheng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,11 +14,10 @@
     <item>
       <title>Mobilenet Homework</title>
       <link>https://ha0cheng.github.io/post/about/</link>
-      <pubDate>Tue, 30 Jun 2020 22:38:24 +0800</pubDate>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ha0cheng.github.io/post/about/</guid>
-      <description>![image-20200702234335233](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200702234335233.png)
-题目1
+      <description>题目1
 可以根据溯源法 $$ input;;F\times F\times C \
 kernel:;; K\times K\times C\times M\
 output ;;F\times F\times M $$ 分析：
