@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.73.0" />
 
-  <title>About &middot; 灰飞鱼的博客</title>
+  <title>Mobilenet Homework &middot; 灰飞鱼的博客</title>
 
     
 
@@ -274,7 +274,7 @@
 
 
 <div class="header">
-  <h1>About</h1>
+  <h1>Mobilenet Homework</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -294,7 +294,125 @@
 
 </div>
 
-  <p>刘梦佳真好看</p>
+  <p>![image-20200702234335233](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200702234335233.png)</p>
+<p>题目1</p>
+<p>可以根据溯源法
+$$
+input;;F\times F\times C \<br>
+kernel:;; K\times K\times C\times M\<br>
+output ;;F\times F\times M
+$$
+分析：</p>
+<p>标准卷积，共有像素个数：
+$$
+F\times F\times M
+$$
+每个像素所需算力消耗：
+$$
+K\times K\times C
+$$
+则总共所需算力消耗为：
+$$
+K\times K\times C\times F\times F\times M
+$$
+深度可分离卷积，主要包括深度卷积和点卷积，深度卷积是使用C个通道的K<em>K卷积核进行卷积操作，输出的像素个数为
+$$
+F\times F \times C
+$$
+所以这一步的算力消耗为：
+$$
+K\times K\times F\times F \times C
+$$
+下一步则是用M个1* 1</em>C的卷积核进行卷积操作，输出像素个数为：
+$$
+F\times F\times M
+$$
+所以这一步的算力消耗为：
+$$
+F\times F\times M \times C
+$$
+所以最后深度可分离卷积的总算力消耗为：
+$$
+K\times K\times F\times F \times C+F\times F\times M \times C
+$$
+两者之比为
+$$
+\frac{K\times K\times F\times F \times C+F\times F\times M \times C}{K\times K\times C\times F\times F\times M}=
+\frac{1}{M}+\frac{1}{K^2}
+$$</p>
+<p>题目二</p>
+<p>![image-20200703000919256](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200703000919256.png)</p>
+<p>在参考https://github.com/Z0m6ie/CIFAR-10_PyTorch 的基础上, 理解代码后进行了实验，</p>
+<p>首先使用pytorch，将Mobilenet的28层结构设置如下</p>
+<pre><code>           self.features = nn.Sequential(
+
+​                nn.Conv2d(3, 32, kernel_size=3, stride=1),
+
+​                nn.ReLU(inplace=True),
+
+​                dw_conv(32, 32, 1),
+
+​                point_conv(32, 64),
+
+​                dw_conv(64, 64, 1),
+
+​                point_conv(64, 128),
+
+​                dw_conv(128, 128, 1),
+
+​                point_conv(128, 128),
+
+​                dw_conv(128, 128, 1),
+
+​                point_conv(128, 256),
+
+​                dw_conv(256, 256, 1),
+
+​                point_conv(256, 256),
+
+​                dw_conv(256, 256, 1),
+
+​                point_conv(256, 512),
+
+​                dw_conv(512, 512, 1),
+
+​                point_conv(512, 512),
+
+​                dw_conv(512, 512, 1),
+
+​                point_conv(512, 512),
+
+​                dw_conv(512, 512, 1),
+
+​                point_conv(512, 512),
+
+​                dw_conv(512, 512, 1),
+
+​                point_conv(512, 512),
+
+​                dw_conv(512, 512, 1),
+
+​                point_conv(512, 512),
+
+​                dw_conv(512, 512, 1),
+
+​                point_conv(512, 1024),
+
+​                dw_conv(1024, 1024, 1),
+
+​                point_conv(1024, 1024),
+
+​                nn.AvgPool2d(4),
+
+​            )
+</code></pre><p>然后在CIFAR10的数据集上进行了50个epoch，最后结果如下</p>
+<p>![image-20200703001454619](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200703001454619.png)</p>
+<p>在测试集实现了85%的正确率，总体来说还是效果很好的。</p>
+<p>总结，mobilenet的主要思想在于：</p>
+<p>1.使用深度可分离卷积替代标准卷积，实现了轻量化网络，在算力消耗和参数量减少一个数量级的条件下仍然可以达到和当时先进方法差不多的性能</p>
+<p>2.使用宽度超参数和分辨率超参数来对更加轻量级的应用提供选择，这一块还未在代码中实现，之后会补充。</p>
+<p>mobilenet之后更新了v2,v3版本，也有很多的创新点，总结如下图，之后会再学习。</p>
+<p>![image-20200703001915014](/Users/liumengjia/Library/Application Support/typora-user-images/image-20200703001915014.png)</p>
 
   
   <h4><i class="fa-share-alt" aria-hidden="true"></i>&nbsp;Share!</h4>
@@ -418,6 +536,9 @@
 
 
 
+<script src="https://ha0cheng.github.io/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
 
 
 </body>
